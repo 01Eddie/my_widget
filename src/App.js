@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import AutoComplete from './Components/auto';
+import Clock from './Components/clock';
+import Weather from './Components/weather';
+import Tabs from './Components/tabs';
+
+const names = [
+  'Abba',
+  'Barney',
+  'Barbara',
+  'Jeff',
+  'Jenny',
+  'Sarah',
+  'Sally',
+  'Xander'
+];
+
+const panes = [
+  {title: 'one', content: 'I am the first'},
+  {title: 'two', content: 'Second pane here'},
+  {title: 'three', content: 'Third pane here'}
+];
+
+const App = () => (
+  <div>
+    <Clock />
+    <Weather />
+    <div className='interactive'>
+      <Tabs panes={panes} />
+      <AutoComplete names={names} />
     </div>
-  );
-}
+  </div>
+)
 
 export default App;
